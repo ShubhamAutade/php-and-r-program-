@@ -419,4 +419,79 @@ echo"<br>
 ?>
 
 
+Q10. Write HTML code to design multiple choice question paper for PHP subject. Display question
+wise marks and total marks received by the student in table format.
 
+
+HTML code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="Q10-in-php.php">
+             Enter Your Name:<br>
+             <input type="text" name="sname" placeholder="Youyr name">
+
+            <h2> answer the folowing question</h2></h3></h3>
+           <h3> Q1] Whith one use of php  for 2 marks</h3><br><br>
+            Stylesheet<input type="radio" name="right" value="0"><br>
+            Database<input type="radio" name="right" value="0"><br>
+            Backend<input type="radio" name="right1" value="2"><br>
+            Frontend<input type="radio" name="right" value="0"><br>
+           
+            <h3> Q2] Whith is  php  comment for 4 marks</h3><br><br>
+                                * <input type="radio" name="right" value="0"><br>
+                                // <input type="radio" name="right2" value="4"><br>
+                                 $<input type="radio" name="right" value="0"><br>
+                                 #<input type="radio" name="right" value="0"><br>
+
+                                 <h3> Q3] Full from of php   for 5 marks</h3><br><br>
+           Hyper Text preprocesor <input type="radio" name="right3" value="5"><br>
+           pre hyper php <input type="radio" name="right" value="0"><br>
+            not full form<input type="radio" name="right" value="0"><br>
+           not all above<input type="radio" name="right" value="0"><br>
+
+
+         <button>submit</button>
+
+            </form>
+            </body>
+            </html>
+
+PHP CODE
+
+<?php
+
+$sname=$_POST['sname'];
+$a1=$_POST['right1'];
+$a2=$_POST['right2'];
+$a3=$_POST['right3'];
+
+$totalMarks=0;
+
+if($a1==2){
+    $totalMarks+=2;
+}
+else{
+    $totalMarks+=0;
+}
+if($a2==4){
+    $totalMarks+=4;
+}
+else{
+    $totalMarks+=0;
+}
+if($a3==5){
+    $totalMarks+=5;
+}
+else{
+    $totalMarks+=0;
+}
+echo"<br>Student Name
+$sname<br> Total Marks =$totalMarks";
+?>
