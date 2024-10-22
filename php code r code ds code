@@ -177,4 +177,36 @@ $strin2=$_POST['s2'];
 
 ?>
 
+Q5. Using regular expressions check for the validity of entered email-id. The @ symbol
+should not appear more than once. The dot (.) can appear at the most once before
+@ (Use explode and ereg function.).
+
+HTML CODE
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="Q5-in-php.php">
+<input type="email" placeholder="enter email id" ><br>
+
+<button>Submit</button>
+
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+echo "Thanks for log in";
+
+?>
+
 
