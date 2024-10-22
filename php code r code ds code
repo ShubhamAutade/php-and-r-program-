@@ -364,6 +364,59 @@ $fprice=70;
          TOTAL= $total";
 
          ?>
+Q9. Write a PHP script to accept customer name and the list of product and quantity on the first
+page. On the next page display the name of the customer, name of the products, rate of the
+product, quantity, and total price in table format
+
+
+HTML CODE
+
+
+
+<!DOCTYPE html>
+
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="Q9-in-php.php">
+        Enter your name : <br>
+        <input type="text" name="cname"  placeholder="Your Name"><br><br>
+        Enter your product name : <br>
+
+        <input type="text" name="pname"  placeholder=" product name"><br><br>
+
+        Enter your Product quantity in KG/ Nmber : <br>
+           
+        <input type="text" name="qgood" placeholder="quantity in KG/ Number"><br><br>
+
+        <button>Submit</button>
+
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+
+<?php
+
+$cnames=$_POST['cname'];
+$p=$_POST['pname'] ;
+$q=$_POST['qgood'];
+
+$kgrate=70;
+$total=$kgrate*$q;
+
+echo"<br>
+                  Custumar name :$cnames <br>
+                  Product :$p<br>
+                  Rate of product:$kgrate
+                  <br> Quantity of product:$q<br>
+                  Total price:$total <br>";
+?>
 
 
 
