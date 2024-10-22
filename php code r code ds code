@@ -273,3 +273,50 @@ switch($ch){
            echo " $mystr ";
 
 }
+
+
+Q7. Write a PHP script to accept username and password. If in the first three chances,
+username and password entered is correct, then display second form, otherwise
+display error message.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post" action="Q7-in-php.php">
+
+        <input type="text" name="uname" placeholder="enter user name" value="1"><br><br>
+        <input type="password" name="upass" placeholder="enter user password" value="2"><br><br>
+        <button>submit</button>
+
+
+    </form>
+</body>
+</html>
+
+
+
+PHP CODE
+
+<?php
+
+$username=$_POST['uname'];
+$userpass=$_POST['upass'];
+
+if( $username=='abc' && $userpass==123){
+
+    echo " <h1>WELCOME</h1>";   
+
+}
+else{
+
+    echo " error";
+}
+?>
+
+
+
