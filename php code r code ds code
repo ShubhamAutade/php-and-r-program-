@@ -1,1 +1,180 @@
 
+Q1. Write a PHP script for the following: Design a form to accept a string. Write a
+function to count the total number of vowels (a,e,i,o,u) from the string. Show the
+occurrences of each vowel from the string. (Use radio buttons and the concept of
+function. Use ‘include’ construct or require stmt.)
+ANS=
+HTML CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <form method="post" action="Q1-in-php.php">
+
+        <input type="text" placeholder="enter a string " name="mystr">
+        <button>submit</button>
+        
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$string=$_POST['mystr'];
+
+echo " we entered string <br>$string <br> total number of vowel";
+
+$vowelCount=0;
+$vo=array('a','e','i','o','u');
+for($i=0; $i<strlen($string); $i++){
+  
+    if(in_array($string[$i],$vo)){
+        $vowelCount++;
+    }
+
+
+}
+
+echo " $vowelCount"
+
+?>
+
+Q2. Write a PHP script for the following: Design a form to accept two numbers from the
+user. Give options to choose the arithmetic operation (use radio buttons). Display the
+result on the next form. (Use the concept of function and default parameters. Use
+‘include’ construct or require stmt).
+
+HTML CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+     <form method="post" action="Q2-in-php.php">
+             <input type="text" placeholder="enter num 1st" name="num1"><br><br>
+
+             <input type="text" placeholder="enter num 2st" name="num2"><br> <br>
+
+            <input type="radio" value="1" name="optr">Addition<br><br>
+
+            <input type="radio" value="2" name="optr">substraction<br><br>
+
+             <input type="radio" value="3" name="optr">multiplication<br><br>
+
+             <input type="radio" value="4" name="optr">division<br><br>
+
+             <button>Submit</button>
+         </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$num1=$_POST['num1'];
+$num2=$_POST['num2'];
+$ch=$_POST['optr'];
+switch($ch)
+{
+
+    case 1: echo " You entered $num1 , $num2 <br> Addition is=".$num1+$num2;
+            break;
+            case 2: echo " You entered $num1 , $num2 <br> Subtraction is=".$num1-$num2;
+            break;
+            case 3: echo " You entered $num1 , $num2 <br> Multiplication is=".$num1*$num2;
+            break;
+            case 4: echo " You entered $num1 , $num2 <br> Divition is=".$num1/$num2;
+            break;
+            
+
+}
+?>
+Q3. Write a PHP script for the following: Design a form to accept the details of 5 different
+items, such as item code, item name, units sold, rate. Display the bill in the tabular
+format. Use only 4 text boxes. (Hint : Use of explode function.)
+
+HTML CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+</head>
+<body>
+
+<form method="post" action="Q3-in-php.php">
+ enter item code<br>
+ <input type="text" placeholder=" enter item code" name="icode" ><br><br>
+ enter item name<br>
+<input type="text" placeholder=" item name" name="iname" ><br><br>
+enter quantity<br>
+<input type="text" placeholder=" quantity" name="iquntity" ><br><br>
+enter price <br>
+<input type="text" placeholder=" price" name="iprice" ><br><br>
+<button> Submit</button>
+ 
+</form> 
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$itemCode=$_POST['icode'];
+$ItemName=$_POST['iname'];
+$totalQantyity=$_POST['iquntity'];
+$price=$_POST['iprice'];
+$amountTOpay=$price*$totalQantyity;
+
+$string="<br> item name = $ItemName,<br> Quntity of item= $totalQantyity,<br> price of item= $price,<br> total amount to pay=  $amountTOpay <br>";
+$array=($string);
+print_r($array);
+
+?>
+
+
+Q4. Write a PHP script for the following: Design a form to accept two strings from the
+user and by clicking on button Compare both Strings (use Built in Function)
+
+HTML CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+
+    <form method="post" action="Q4-in-php.php">
+
+        <input type="text" placeholder="enter a string 1st" name="s1">
+        <input type="text" placeholder="enter a string 2nd" name="s2">
+        <button>submit</button>
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$strin1=$_POST['s1'];
+$strin2=$_POST['s2'];
+ $ans=strcmp($strin1,$strin2);
+ echo "$ans";
+
+?>
+
+
