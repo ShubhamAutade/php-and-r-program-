@@ -209,4 +209,67 @@ echo "Thanks for log in";
 
 ?>
 
+Q6. Write a PHP script for the following: Design a form to accept two strings. Compare
+the two strings using both methods (= = operator &strcmp function). Append second
+string to the first string. (Use radio buttons)
 
+HTML CODE
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="Q6-in-php.php">
+
+        enter a strin 1st:<br>
+
+        <input type="text" placeholder="enter string 1st" name="str1"><br><br>
+
+        enter a 2nd string:<br>
+<input type="text" placeholder="enter string 2st" name="str2"><br><br>
+
+chose whitch one type to campare a string<br><br>
+
+Compair With ==
+<input type="radio" value="1"  name="optr"><br>
+Compair With strcmp() function
+<input type="radio" value="2"  name="optr"><br><br>
+<button>Submit</button>
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$string1=$_POST['str1'];
+$string2=$_POST['str2'];
+$ch=$_POST['optr'];
+
+switch($ch){
+
+    case 1:
+
+           if($string1==$string2){
+
+            echo " string are eqal";
+            
+           }
+           else{
+
+            echo " string are not eqal";
+           }
+           break;
+
+           case 2: $mystr=strcmp($string1,$string2);
+           echo " $mystr ";
+
+}
