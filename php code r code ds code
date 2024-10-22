@@ -317,6 +317,53 @@ else{
     echo " error";
 }
 ?>
+Q8. Write a PHP Script to create a class Fruit that contains data members as Name, Color and
+Price. Write a member function to accept and display details of Fruit
+
+
+HTML CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="Q8-in-php.php">
+       
+        enter fruit name:<br>
+        <input type="text" placeholder="fruit name" name="myf"><br><br>
+        enter fruit quantyty in KG:<br>
+        <input type="text" placeholder="fruit qantity" name="myfq"><br><br>
+        <button>submit</button>
+
+
+
+
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$fname=$_POST['myf'];
+$fruitQuantity=$_POST['myfq'];
+
+$fprice=70;
+ $orderNumber=1;
+ $total=$fprice*$fruitQuantity;
+
+ echo" Item name = $fname <br><br>
+        Item code = $orderNumber<br><br>
+        Quntiti in KG= $fruitQuantity<br><br>
+         1KG Rate = $fprice<br><br>
+         TOTAL= $total";
+
+         ?>
 
 
 
