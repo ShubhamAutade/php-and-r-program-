@@ -495,7 +495,60 @@ else{
 echo"<br>Student Name
 $sname<br> Total Marks =$totalMarks";
 ?>
+Q11. To design an application that works as a simple calculator using PHP. (use isset())
 
+HTML CODE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="Q11-in-php.php">
+
+    <h3>enter a numbe</h3><br>
+    <input type="text" placeholder="enter a number" name="num1" ><br>
+    <input type="radio" name="optr" value="1">+
+<input type="radio" name="optr" value="2">_
+<input type="radio" name="optr" value="3">/
+<input type="radio" name="optr" value="4">*
+
+
+    <h3>enter a numbe</h3><br>
+    <input type="text" placeholder="enter a number" name="num2" ><br>
+
+    <button>submit</button>
+
+    </form>
+    
+</body>
+</html>
+
+PHP CODE
+
+<?php
+
+$num2=$_POST['num1'];
+$num1=$_POST['num2'];
+$ch=$_POST['optr'];
+
+switch($ch){
+
+    case 1: echo " You entered $num1 , $num2 <br> Addition is=".$num1+$num2;
+    break;
+    case 2: echo " You entered $num1 , $num2 <br> Subtraction is=".$num1-$num2;
+    break;
+    case 3: echo " You entered $num1 , $num2 <br> division is=".$num1/$num2;
+    break;
+    case 4: echo " You entered $num1 , $num2 <br>Multiplication is=".$num1*$num2;
+    break;
+    
+
+
+}
 
 
 R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
