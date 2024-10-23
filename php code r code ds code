@@ -684,3 +684,548 @@ result <- check_odd_even(number_to_check)
 cat(number_to_check, "is an", result, "number.")
 
 
+DSDSDSDSDSDSDSDSDSDSDSDDDSDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+ 
+ 
+1. Write a C program to accept and sort n elements in ascending order by using bubble sort. 
+#include<stdio.h> 
+#include<conio.h> 
+#define MAXSIZE 10 
+void main() 
+{ 
+int array[MAXSIZE]; 
+int i, j, num, temp; 
+clrscr(); 
+printf("Enter the value of num \n"); 
+scanf("%d", &num); 
+printf("Enter the elements one by one \n"); 
+for (i = 0; i < num; i++) 
+{ 
+scanf("%d", &array[i]); 
+} 
+printf("Input array is \n"); 
+for (i = 0; i < num; i++) 
+{ 
+printf("%d\n", array[i]); 
+} 
+for (i = 0; i < num; i++) 
+{ 
+for (j = 0; j < (num - i - 1); j++) 
+{ 
+if (array[j] > array[j + 1]) 
+{ 
+temp = array[j]; 
+array[j] = array[j + 1]; 
+array[j + 1] = temp; 
+} 
+} 
+} 
+printf("Sorted array is...\n"); 
+for (i = 0; i < num; i++) 
+{ 
+printf("%d\n", array[i]); 
+} 
+getch(); 
+} 
+2. Write a C program to accept and sort n elements in ascending order by using insertion sort. 
+ 
+#include<stdio.h> 
+#include<conio.h> 
+void main() 
+{ 
+int n, i, j, temp; 
+int arr[64]; 
+clrscr(); 
+printf("Enter number of elements\n"); 
+scanf("%d", &n); 
+printf("Enter %d integers\n", n); 
+for (i = 0; i < n; i++) 
+{ 
+scanf("%d", &arr[i]); 
+} 
+for (i = 1; i < n; i++) 
+{ 
+j = i; 
+while (j > 0 && arr[j - 1] > arr[j]) 
+{ 
+temp = arr[j]; 
+arr[j] = arr[j - 1]; 
+arr[j - 1] = temp; 
+j--; 
+} 
+} 
+printf("Sorted list in ascending order:\n"); 
+for (i = 0; i < n; i++) 
+{ 
+printf("%d\n", arr[i]); 
+} 
+getch(); 
+} 
+ 3.write a c program to acept sort enlement in asending order  using selection sort
+method. 
+#include<stdio.h> 
+#include<conio.h> 
+void main() 
+{ 
+int array[100], n, c, d, position, t; 
+clrscr(); 
+printf("Enter number of elements\n"); 
+scanf("%d", &n); 
+printf("Enter %d integers\n", n); 
+for (c = 0; c < n; c++) 
+scanf("%d", &array[c]); 
+for (c = 0; c < (n - 1); c++) // finding minimum element (n-1) times 
+{ 
+position = c; 
+for (d = c + 1; d < n; d++) 
+{ 
+if (array[position] > array[d]) 
+position = d; 
+} 
+if (position != c) 
+{ 
+t = array[c]; 
+array[c] = array[position]; 
+array[position] = t; 
+} 
+} 
+printf("Sorted list in ascending order:\n"); 
+for (c = 0; c < n; c++) 
+printf("%d\n", array[c]); 
+getch(); 
+} 
+ 
+4. Write a C program to accept and sort n elements in ascending order by using quick sort 
+ 
+#include<stdio.h> 
+#include<conio.h> 
+void quicksort(int x[20],int first,int last) 
+{ 
+int pivot,j,temp,i; 
+if(first<last) 
+{ 
+pivot=first; 
+i=first; 
+j=last; 
+while(i<j) 
+{ 
+while(x[i]<=x[pivot]&&i<last) 
+i++; 
+while(x[j]>x[pivot]) 
+j--; 
+if(i<j) 
+{ 
+temp=x[i]; 
+x[i]=x[j]; 
+x[j]=temp; 
+} 
+} 
+temp=x[pivot]; 
+x[pivot]=x[j]; 
+x[j]=temp; 
+quicksort(x,first,j-1); 
+quicksort(x,j+1,last); 
+} 
+} 
+int main() 
+{ 
+int x[20],size,i; 
+clrscr(); 
+printf(" How many numbers you want to sort?: "); 
+scanf("%d",&size); 
+printf("\n Enter %d elements: \n",size); 
+for(i=0;i<size;i++) 
+scanf("%d",&x[i]); 
+quicksort(x,0,size-1); 
+printf("\n Sorted elements after applying quick sort: \n"); 
+for(i=0;i<size;i++) 
+printf(" %d",x[i]); 
+getch(); 
+return 0; 
+} 
+5. Write a C program to accept n elements from user store it in an array. Accept a value from the user and
+use linear/Sequential search method to check whether the value is present in array or not. Display proper 
+message 
+ 
+#include<stdio.h> 
+#include<conio.h> 
+void main() 
+{ 
+int arr[100], n, i, search; 
+clrscr(); 
+printf("Enter the number of elements you want in the array: "); 
+scanf("%d", &n); 
+for(i=0; i<n; i++) 
+{ 
+printf("Enter value for index %d: ", i); 
+scanf("%d", &arr[i]); 
+} 
+printf("\nEnter the number you want to search in the array: "); 
+scanf("%d", &search); 
+for(i=0; i<n; i++) 
+{ 
+if(arr[i] == search) 
+{ 
+printf("\n%d found at %d position.\n", search, i); 
+break; 
+} 
+} 
+if(i == n) 
+{ 
+printf("\n%d not found in the array.\n",search); 
+} 
+getch(); 
+} 
+ 
+6. Write a C program to accept n elements from user store it in an array. Accept a value from the 
+ 
+user and use binary search method to check whether the value is present in array or not. 
+Display proper message. (Students should accept sorted array and use Recursive function). 
+#include <stdio.h> 
+void binary_search(int [], int, int, int); 
+void bubble_sort(int [], int); 
+int main() 
+{ 
+int key, size, i; 
+int list[25]; 
+clrscr(); 
+printf("Enter size of a list: "); 
+scanf("%d", &size); 
+printf("Enter elements\n"); 
+for(i = 0; i < size; i++) 
+{ 
+scanf("%d",&list[i]); 
+} 
+bubble_sort(list, size); 
+printf("\n"); 
+printf("Enter key to search\n"); 
+scanf("%d", &key); 
+binary_search(list, 0, size, key); 
+getch(); 
+} 
+void bubble_sort(int list[], int size) 
+{ 
+int temp, i, j; 
+for (i = 0; i < size; i++) 
+{ 
+for (j = i; j < size; j++) 
+{ 
+if (list[i] > list[j]) 
+{ 
+temp = list[i]; 
+list[i] = list[j]; 
+list[j] = temp; 
+} 
+} 
+} 
+} 
+void binary_search(int list[], int lo, int hi, int key) 
+{ 
+int mid; 
+if (lo > hi) 
+{ 
+printf("Key not found\n"); 
+return; 
+} 
+mid = (lo + hi) / 2; 
+if (list[mid] == key) 
+{ 
+printf("Key found\n"); 
+} 
+else if (list[mid] > key) 
+{ 
+binary_search(list, lo, mid - 1, key); 
+} 
+else if (list[mid] < key) 
+{ 
+binary_search(list, mid + 1, hi, key); 
+} 
+} 
+7. Write a C program to implement a Circular Singly linked list with Create and Display operation. 
+ 
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<conio.h> 
+struct node 
+{ 
+int num; 
+struct node *nextptr; 
+}*stnode; 
+void ClListcreation(int n); 
+void displayClList(); 
+int main() 
+{ 
+int n; 
+stnode = NULL; 
+clrscr(); 
+printf(" Input the number of nodes : "); 
+scanf("%d", &n); 
+ClListcreation(n); 
+displayClList(); 
+getch(); 
+} 
+void ClListcreation(int n) 
+{ 
+int i, num; 
+struct node *preptr, *newnode; 
+if (n >= 1) 
+{ 
+stnode = (struct node *)malloc(sizeof(struct node)); 
+printf(" Input data for node 1 : "); 
+scanf("%d", &num); 
+stnode->num = num; 
+stnode->nextptr = NULL; 
+preptr = stnode; 
+for (i = 2; i <= n; i++) 
+{ 
+newnode = (struct node *)malloc(sizeof(struct node)); 
+printf(" Input data for node %d : ", i); 
+scanf("%d", &num); 
+newnode->num = num; 
+newnode->nextptr = NULL; 
+preptr->nextptr = newnode; 
+preptr = newnode; 
+} 
+preptr->nextptr = stnode; 
+} 
+} 
+void displayClList() 
+{ 
+struct node *tmp; 
+int n = 1; 
+if (stnode == NULL) 
+{ 
+printf(" No data found in the List yet."); 
+} 
+else 
+{ 
+tmp = stnode; 
+printf("\n\n Data entered in the list are :\n"); 
+do 
+{ 
+printf(" Data %d = %d\n", n, tmp->num); 
+tmp = tmp->nextptr; 
+n++; 
+} 
+while (tmp != stnode); 
+} 
+} 
+8. Write a C program to implement a singly linked list with Create and Display operation. 
+ 
+#include<stdio.h> 
+#include<stdlib.h> 
+struct node 
+{ 
+int num; 
+struct node *nextptr; 
+} *stnode; 
+void createNodeList(int n); 
+void displayList(); 
+void main() 
+{ 
+int n; 
+clrscr(); 
+printf(" Input the number of nodes : "); 
+scanf("%d", &n); 
+createNodeList(n); 
+printf("\n Data entered in the list : \n"); 
+displayList(); 
+getch(); 
+} 
+void createNodeList(int n) 
+{ 
+struct node *fnNode, *tmp; 
+int num, i; 
+stnode = (struct node *)malloc(sizeof(struct node)); 
+if(stnode == NULL) 
+{ 
+printf(" Memory can not be allocated."); 
+} 
+else 
+{ 
+printf(" Input data for node 1 : "); 
+scanf("%d", &num); 
+stnode->num = num; 
+stnode->nextptr = NULL; 
+tmp = stnode; 
+for(i = 2; i <= n; i++) 
+{ 
+fnNode = (struct node *)malloc(sizeof(struct node)); 
+if(fnNode == NULL) 
+{ 
+printf(" Memory can not be allocated."); 
+break; 
+} 
+else 
+{ 
+printf(" Input data for node %d : ", i); 
+scanf(" %d", &num); 
+fnNode->num = num; 
+fnNode->nextptr = NULL; 
+tmp->nextptr = fnNode; 
+tmp = tmp->nextptr; 
+} 
+} 
+} 
+} 
+void displayList() 
+{ 
+struct node *tmp; 
+if(stnode == NULL) 
+{ 
+printf(" List is empty."); 
+} 
+else 
+{ 
+tmp = stnode; 
+while(tmp != NULL) 
+{ 
+printf(" Data = %d\n", tmp->num); 
+tmp = tmp->nextptr; 
+} 
+} 
+} 
+9. Write a C program to implement a doubly linked list with Create and Display operation. 
+ 
+#include<stdio.h> 
+#include<stdlib.h> 
+#include<conio.h> 
+struct node 
+{ 
+int num; 
+struct node *preptr; 
+struct node *nextptr; 
+} *stnode, *ennode; 
+void DlListcreation(int n); 
+void displayDlList(); 
+int main() 
+{ 
+int n; 
+stnode = NULL; 
+ennode = NULL; 
+clrscr(); 
+printf(" Input the number of nodes : "); 
+scanf("%d", &n); 
+DlListcreation(n); 
+displayDlList(); 
+getch(); 
+} 
+void DlListcreation(int n) 
+{ 
+int i, num; 
+struct node *fnNode; 
+if (n >= 1) 
+{ 
+stnode = (struct node *)malloc(sizeof(struct node)); 
+if (stnode != NULL) 
+{ 
+printf(" Input data for node 1 : "); 
+scanf("%d", &num); 
+stnode->num = num; 
+stnode->preptr = NULL; 
+stnode->nextptr = NULL; 
+ennode = stnode; 
+for (i = 2; i <= n; i++) { 
+fnNode = (struct node *)malloc(sizeof(struct node)); 
+if (fnNode != NULL) { 
+printf(" Input data for node %d : ", i); 
+scanf("%d", &num); 
+fnNode->num = num; 
+fnNode->preptr = ennode; 
+fnNode->nextptr = NULL; 
+ennode->nextptr = fnNode; 
+ennode = fnNode; 
+} 
+else 
+{ 
+printf(" Memory can not be allocated."); 
+break; 
+} 
+} 
+} 
+else 
+{ 
+printf(" Memory can not be allocated."); 
+} 
+} 
+} 
+void displayDlList() 
+{ 
+struct node *tmp; 
+int n = 1; 
+if (stnode == NULL) 
+{ 
+printf(" No data found in the List yet."); 
+} 
+else 
+{ 
+tmp = stnode; 
+printf("\n\n Data entered on the list are :\n"); 
+while (tmp != NULL) 
+{ 
+printf(" node %d : %d\n", n, tmp->num); 
+n++; 
+tmp = tmp->nextptr; 
+} 
+} 
+} 
+10.Write a C program to implement a doubly linked list with Create and Display operation. 
+#include<stdio.h> 
+#include<stdlib.h> 
+struct Node 
+{ 
+int data; 
+struct Node* next; 
+struct Node* prev; 
+}; 
+struct Node* createNode(int data) 
+{ 
+struct Node* newNode = (struct Node*)malloc(sizeof(struct Node)); 
+newNode->data = data; 
+newNode->next = newNode; // Point to itself 
+newNode->prev = newNode; // Point to itself 
+return newNode; 
+} 
+void insertEnd(struct Node** head, int data) 
+{ 
+struct Node* newNode = createNode(data); 
+if (*head == NULL) 
+{ 
+*head = newNode; 
+} 
+else 
+{ 
+struct Node* tail = (*head)->prev; 
+tail->next = newNode; 
+newNode->prev = tail; 
+} 
+newNode->next = *head; 
+(*head)->prev = newNode; 
+} 
+void displayList(struct Node* head) 
+{ 
+if (head == NULL) 
+{ 
+printf("The list is empty.\n"); 
+return; 
+} 
+struct Node* temp = head; 
+do { 
+printf("%d ", temp->data); 
+temp = temp->next; 
+} 
+while(temp != head); 
+printf("\n"); 
+} 
+int main() 
+{ 
+struct Node* head = NULL; 
+insertEnd(&head, 10); 
+insertEnd(&head, 20); 
+insertEnd(&head, 30); 
+insertEnd(&head, 40); 
+insertEnd(&head, 50); 
+printf("Circular Doubly Linked List: "); 
+displayList(head); 
+return 0;
+}
