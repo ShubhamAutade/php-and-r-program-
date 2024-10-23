@@ -498,5 +498,136 @@ $sname<br> Total Marks =$totalMarks";
 
 
 
-DS DS DS DS Ds Ds Ds Ds Ds
+R RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+1.Write an R Program to Print “Hello world” using the print() function.
+Solution:
+message <-"Hello world "
+print(message)
+2.Write an R program to find factorial of a number using factorial() function.
+Solution:
+# R program to calculate factorial value
+# Using factorial() method
+answer1 <- factorial(4)
+answer2 <- factorial(5)
+answer3 <- factorial(0)
+print(answer1)
+print(answer2)
+print(answer3)
+3.Write an R program to print multiplication table.
+Solution:
+# Program to find the multiplication
+# table (from 1 to 10)
+# of a number input by the user
+# take input from the user
+num = as.integer(readline(prompt = "Enter a number: "))
+# use for loop to iterate 10 times
+for(i in 1:10) 
+{
+ print(paste(num,'x', i, '=', num*i))
+}
+
+4. Write a R program to accept temperatures in Fahrenheit (F) and print it in
+Celsius (C).
+Solution:
+# Convert Fahrenheit to Celsius
+fahrenheit_to_celsius <- function(fahrenheit) {
+ return((fahrenheit - 32) * 5/9)
+}
+# Example: Convert 77 degrees Fahrenheit to Celsius
+fahrenheit_temp <- 77
+celsius_temp <- fahrenheit_to_celsius(fahrenheit_temp)
+cat(fahrenheit_temp, "degrees Fahrenheit is equal to", celsius_temp, "Celsius\n")
+5. Write a R program accept any year as input and check whether the year is
+a leap year or not.
+Solution:
+# Function to check for a leap year
+is_leap_year <- function(year) {
+ if ((year %% 4 == 0 && year %% 100 != 0) || year %% 400 == 0) {
+ return(TRUE)
+ } else {
+ return(FALSE)
+ }
+}
+# Input year
+input_year <- 2024
+# Check if it's a leap year
+if (is_leap_year(input_year)) {
+ print(paste(input_year, "is a leap year.")
+} else {
+ print(paste(input_year, "is not a leap year."))
+}
+6. write a r program to find weather given number is positive or negative or zero
+Solution:
+num=-6
+if(num>0)
+{
+ print("positive number")
+}else
+ if(num==0)
+ {
+ print("zero")
+ 
+ }else
+ {
+ print("negative number")
+}
+7. Write an R program to sort a Vector in ascending and descending order.
+Solution:
+x = c(10, 20, 30, 25, 9, 26)
+print("Original Vectors:")
+print(x)
+print("Sort in ascending order:")
+print(sort(x))
+print("Sort in descending order:")
+print(sort(x, decreasing=TRUE))
+8. Write an R program to check number is Armstrong or no
+8. Write an R program to check number is Armstrong or not
+Solution:
+armstrong<-function(num){
+ temp = num
+ n = 0L
+ while(temp>0){
+ temp = floor(temp/10)
+ n=n+1
+ }
+ temp = num
+ sum = 0
+ while(temp>0){
+ digit = temp%%10
+ sum = sum + (digit^n)
+ temp = floor(temp/10)
+ }
+ if(num==sum){
+ paste(num,"is a armstrong number")
+ }else{
+ paste(num,"is not a armstrong number")
+ }
+}
+armstrong(7)
+armstrong(4679307774)
+armstrong(153)
+9. write a R program to create a simple bar plot of five subjects marks.
+Solution:
+marks = c(70, 95, 80, 74)
+barplot(marks,
+ main = "Comparing marks of 5 subjects",
+ xlab = "Marks",
+ ylab = "Subject",
+ names.arg = c("English", "Science", "Math.", "Hist."),
+ col = "darkred",
+ horiz = FALSE)
+10. Write a R program to check if a number is even or odd.
+Solution:
+check_odd_even <- function(number) {
+ if (number %% 2 == 0) {
+ return("Even")
+ } else {
+ return("Odd")
+}
+}
+# Example usage
+number_to_check <- 15
+result <- check_odd_even(number_to_check)
+cat(number_to_check, "is an", result, "number.")
+
 
